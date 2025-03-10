@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SubtitleTranslationAIApplication {
+public class SubtitleTranslationAI {
 
     public static void main(String[] args) {
-        SpringApplication.run(SubtitleTranslationAIApplication.class, args);
+        SpringApplication.run(SubtitleTranslationAI.class, args);
     }
 }
