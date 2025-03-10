@@ -56,10 +56,10 @@
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <skipTests>true</skipTests>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -92,7 +92,7 @@
             <!--https://github.com/bucket4j/bucket4j -->
             <dependency>
                 <groupId>com.bucket4j</groupId>
-                <artifactId>bucket4j_jdk17-core</artifactId>
+                <artifactId>bucket4j_jdk21-core</artifactId>
                 <version>${bucket4j.version}</version>
             </dependency>
 
@@ -267,8 +267,8 @@
                     <configuration>
                         <encoding>UTF-8</encoding>
                         <parameters>true</parameters>
-                        <source>17</source>
-                        <target>17</target>
+                        <source>21</source>
+                        <target>21</target>
                         <compilerArgs>
                             <arg>-parameters</arg>
                         </compilerArgs>

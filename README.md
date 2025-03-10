@@ -34,7 +34,7 @@ java -Dspring.profiles.active=prod -Duser.timezone=UTC -Dfile.encoding=UTF-8 -ja
 
 ```html
 # 是否开启结构化日志
-LOGGING_STRUCTURED=off
+LOGGING_STRUCTURED=false
 # 生产环境下的日志路径
 LOG_PATH=D:\logs
 # 项目使用的默认时区
