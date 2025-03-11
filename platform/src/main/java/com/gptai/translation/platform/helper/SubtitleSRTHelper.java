@@ -1,4 +1,4 @@
-package com.gptai.translation.platform.parser;
+package com.gptai.translation.platform.helper;
 
 import com.gptai.translation.platform.dto.SubtitleDTO;
 
@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class SRTParser {
+
+public class SubtitleSRTHelper {
 
     private static final Pattern PATTERN = Pattern.compile("(\\d+)\\s*\\n(\\d{2}:\\d{2}:\\d{2},\\d{3}) --> (\\d{2}:\\d{2}:\\d{2},\\d{3})\\s*\\n((?:.+\\n?)+)");
 
@@ -29,6 +30,16 @@ public class SRTParser {
             subtitles.add(new SubtitleDTO(index, startTime, endTime, text));
         }
         return subtitles;
+    }
+
+    public static void writeSRT(List<SubtitleDTO> subtitles, String outputPath) throws IOException {
+        var srtContent = new StringBuilder();
+        for (var subtitle : subtitles) {
+            srtContent.append(subtitle.getIndex()).append("\n")
+                    .append(subtitle.getStartTime()).append(" --> ").append(subtitle.getEndTime()).append("\n")
+                    .append(subtitle.getText()).append("\n\n");
+        }
+        Files.writeString(Paths.get(outputPath), srtContent.toString());
     }
 
 }
