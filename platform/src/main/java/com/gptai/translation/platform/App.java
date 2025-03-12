@@ -10,17 +10,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication(scanBasePackages = "com.gptai.translation")
-public class SubtitleTranslationAI {
+public class App {
 
     public static void main(String[] args) {
         SpringUtil.loadEnvFile(args);
-        SpringApplication.run(SubtitleTranslationAI.class, args);
+        SpringApplication.run(App.class, args);
     }
 
     public static void restartApp() {
         try {
             var executor = Executors.newSingleThreadScheduledExecutor();
-            executor.schedule(SubtitleTranslationAI::internalRestartApp, 1, TimeUnit.SECONDS);
+            executor.schedule(App::internalRestartApp, 1, TimeUnit.SECONDS);
         } catch (Exception e) {
             throw new UtilException("Failed to restart the application.", e);
         }
@@ -42,7 +42,7 @@ public class SubtitleTranslationAI {
             try {
                 var sourceArgs = args.getSourceArgs();
                 SpringUtil.loadEnvFile(sourceArgs);
-                SpringApplication.run(SubtitleTranslationAI.class, sourceArgs);
+                SpringApplication.run(App.class, sourceArgs);
             } catch (Exception e) {
                 throw new UtilException("Failed to restart the application.", e);
             }

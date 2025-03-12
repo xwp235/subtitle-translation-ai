@@ -6,7 +6,7 @@ import com.gptai.translation.common.exceptions.RootErrorInfo;
 import com.gptai.translation.common.resp.JsonResp;
 import com.gptai.translation.common.utils.ServletUtil;
 import com.gptai.translation.common.utils.SpringUtil;
-import com.gptai.translation.platform.SubtitleTranslationAI;
+import com.gptai.translation.platform.App;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -123,7 +123,7 @@ public abstract class AbstractExceptionHandler implements IExceptionHandler {
         if (ArrayUtils.isEmpty(stackTrace)) {
             return null;
         }
-        var rootPackage = ClassUtils.getPackageName(SubtitleTranslationAI.class);
+        var rootPackage = ClassUtils.getPackageName(App.class);
         return getRootInfoDetail(stackTrace, rootPackage);
     }
 

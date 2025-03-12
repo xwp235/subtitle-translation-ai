@@ -20,10 +20,6 @@
             <artifactId>common</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>com.openai</groupId>
-            <artifactId>openai-java</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -48,7 +44,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.gptai.translation.platform.SubtitleTranslationAI</mainClass>
+                    <mainClass>com.gptai.translation.platform.App</mainClass>
                 </configuration>
             </plugin>
             <plugin>
